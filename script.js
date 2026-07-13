@@ -17,6 +17,17 @@ function calcular(operacao) {
     else if (operacao === '-') {
         resultado = num1 - num2;
     } 
+    else if (operacao === '*') {
+        resultado = num1 * num2;
+    }
+    else if (operacao === '/') {
+        // Validação para evitar divisão por zero
+        if (num2 === 0) {
+            document.getElementById('resultado').innerText = "Erro: Divisão por zero!";
+            return;
+        }
+        resultado = num1 / num2;
+    }
 
     // Envia o resultado final de volta para o HTML
     document.getElementById('resultado').innerText = resultado;
